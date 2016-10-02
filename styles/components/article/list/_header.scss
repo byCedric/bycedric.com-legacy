@@ -1,0 +1,14 @@
+@import 'styles/utilities/color';
+@import 'styles/utilities/reset';
+@import 'styles/utilities/typography';
+
+.c-article-list-header {
+	padding: 1em;
+
+	&__title {
+		@extend %reset-heading;
+		@extend %typo-body-2;
+
+		color: $color-secondary;
+	}
+}
