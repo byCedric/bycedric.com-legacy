@@ -1,0 +1,43 @@
+/**
+ * Generic colors for simple usage.
+ */
+$color-black: #000;
+$color-white: #FFF;
+
+/**
+ * All main theme colors, from Google's Material Design guidelines.
+ */
+$color-gray-50:  #FAFAFA;
+$color-gray-100: #F5F5F5;
+$color-gray-200: #EEEEEE;
+$color-gray-300: #E0E0E0;
+$color-gray-400: #BDBDBD;
+$color-gray-500: #9E9E9E;
+$color-gray-600: #757575;
+$color-gray-700: #616161;
+$color-gray-800: #424242;
+$color-gray-900: #212121;
+
+/**
+ * All available accent colors, from Google's Material Design guidelines.
+ */
+$color-red-a100: #FF8A80;
+$color-red-a200: #FF5252;
+$color-red-a400: #FF1744;
+$color-red-a700: #D50000;
+
+/**
+ * Opacity values for the colors, from Google's Material Design guidelines.
+ */
+$color-opacity-primary: 0.87;
+$color-opacity-secondary: 0.54;
+$color-opacity-disabled: 0.38;
+$color-opacity-divider: 0.12;
+
+/**
+ * The primary (text) colors, using the opacity values.
+ */
+$color-primary: rgba(0, 0, 0, $color-opacity-primary);
+$color-secondary: rgba(0, 0, 0, $color-opacity-secondary);
+$color-disabled: rgba(0, 0, 0, $color-opacity-disabled);
+$color-divider: rgba(0, 0, 0, $color-opacity-divider);

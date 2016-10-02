@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import MyComponent from 'app/components/my';
+import AppLayout from 'app/layouts/app';
 
 /**
  * Render the application into the `body > #app` element.
  */
-render(<MyComponent />, document.getElementById('app'));
+render(<AppLayout />, document.getElementById('app'));
