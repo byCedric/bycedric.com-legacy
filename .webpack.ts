@@ -84,7 +84,7 @@ export default {
 					'sass?sourceMap',
 				],
 				include: [
-					path.resolve('./style'),
+					path.resolve('./styles'),
 					path.resolve('./node_modules/normalize.css'),
 				],
 			}
