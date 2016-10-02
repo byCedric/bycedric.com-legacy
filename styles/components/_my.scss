@@ -1,0 +1,12 @@
+@import 'styles/utilities/reset';
+
+.c-my {
+	@extend %reset-heading;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 5em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
