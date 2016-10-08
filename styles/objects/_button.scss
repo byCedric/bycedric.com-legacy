@@ -1,0 +1,22 @@
+.o-button {
+	display: inline-block;
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+	border: 0.25em solid transparent;
+	padding: 0.5em 2em;
+	margin: 0.25em;
+	border-radius: 0.25em;
+
+	&:hover,
+	&--type-github:hover { border-color: #333 }
+	&--type-bitbucket:hover { border-color: #205081 }
+	&--type-linkedin:hover { border-color: #0077B5 }
+	&--type-soundcloud:hover { border-color: #ff5500 }
+
+	&__text { display: none }
+	&__icon {
+		display: inline-block;
+		font-size: 1.25em;
+	}
+}

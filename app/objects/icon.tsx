@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component, ReactElement } from 'react';
+import * as cn from 'classnames';
 
 export const styles = require('styles/objects/_icon');
 
@@ -17,7 +18,7 @@ export default class IconObject extends Component<Props, State>
 	 */
 	render(): ReactElement<any> {
 		return (
-			<i className={styles.oIcon} />
+			<i className={cn(styles.oIcon, `${styles.oIcon}--type-${this.props.type}`)} />
 		);
 	}
 }

@@ -100,6 +100,12 @@ export default {
 	 */
 	plugins: [
 
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify('production')
+			}
+		}),
+
 		new ExtractTextPlugin({
 			filename: 'styles.css',
             allChunks: true,
@@ -126,7 +132,7 @@ export default {
 	 * @type {object}
 	 */
 	devServer: {
-		contentBase: path.resolve('./public'),
+		contentBase: path.resolve('./static'),
 		host: '0.0.0.0',
 		port: 8000,
 		historyApiFallback: true,
