@@ -93,7 +93,7 @@ export default {
 			},
 			{
 				test: /\.(json)$/,
-				loader: 'json',
+				loader: 'file?name=[name].[ext]',
 				include: [
 					path.resolve('./app'),
 				],
