@@ -61,7 +61,7 @@
 		"build:prepare": "rm -rf ./built ./.tmp; mkdir ./built",
 		"build:static": "cp -r -n ./static/. ./.tmp; exit 0",
 		"build:webpack": "./node_modules/.bin/webpack --config .webpack.ts --progress -d",
-		"build:finalize": "cp -r ./.tmp/. ./built; rm -rf ./.tmp; rm -rf ./built/app.js",
+		"build:finalize": "cp -r ./.tmp/. ./built; rm -rf ./.tmp; rm -rf ./built/app.js ./built/manifest.js",
 		"compile": "npm run build:prepare && npm run compile:webpack && npm run build:static && npm run build:finalize",
 		"compile:webpack": "./node_modules/.bin/webpack --config .webpack.ts --progress -p"
 	}
