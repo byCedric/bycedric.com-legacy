@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Component, PropTypes, ReactElement, ReactNode } from 'react';
+import { Component, ReactElement } from 'react';
 
-import ToolbarComponent from 'app/components/toolbar';
-import ArticlesListComponent from 'app/components/article/list';
+import IconObject from 'app/objects/icon';
 
 export const styles = require('styles/layouts/_app');
 
@@ -19,8 +18,9 @@ export default class AppLayout extends Component<Props, State>
 	render(): ReactElement<any> {
 		return (
 			<div className={styles.lApp}>
-				<ToolbarComponent />
-				<ArticlesListComponent />
+				<h1 className={styles.lAppTitle}>Welcome to my app!</h1>
+				<br /><br />
+				<IconObject />
 			</div>
 		);
 	}

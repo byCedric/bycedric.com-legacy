@@ -1,25 +1,23 @@
 {
-	"name": "@bycedric/nos-experiment",
+	"name": "@bycedric/bycedric.com",
 	"version": "0.1.0",
-	"description": "I still want to read the news when I'm on the toilet, with sh*tty wifi.",
+	"description": "The static react website code from bycedirc.com",
 	"keywords": [
-		"nos",
-		"pwa",
 		"bycedric"
 	],
 	"homepage": "https://bycedric.com",
 	"bugs": {
 		"url": "https://github.com/bycedric/nos-experiment/issues"
 	},
-	"license": "MIT",
+	"license": "UNLICENSED",
+	"private": true,
 	"author": "Cedric van Putten <me@bycedric.com> (https://bycedric.com)",
-	"repository": "github:bycedric/nos-experiment",
+	"repository": "github:bycedric/bycedric.com",
 	"dependencies": {
 		"include-media": "^1.4",
 		"normalize.css": "^4.1",
 		"react": "^15.3",
-		"react-dom": "^15.3",
-		"react-router": "^2.8"
+		"react-dom": "^15.3"
 	},
 	"devDependencies": {
 		"@types/classnames": "^0.0.30",
@@ -36,17 +34,20 @@
 		"css-loader": "^0.25",
 		"css-modules-require-hook": "^4.0",
 		"enzyme": "^2.4",
+		"extract-text-webpack-plugin": "^2.0.0-beta.4",
 		"mocha": "^3.1",
 		"node-sass": "^3.10",
 		"react-addons-test-utils": "^15.3",
+		"react-static-webpack-plugin": "^1.2",
 		"sass-loader": "^4.0",
 		"style-loader": "0.13",
 		"ts-loader": "^0.8",
 		"ts-node": "^1.3",
 		"typescript": "^2.0",
-		"webpack": "2.1.0-beta.25",
+		"webpack": "^2.1.0-beta.25",
 		"webpack-dashboard": "^0.2",
-		"webpack-dev-server": "2.1.0-beta.8"
+		"webpack-dev-server": "^2.1.0-beta.8"
+
 	},
 	"scripts": {
 		"test": "npm run test:mocha",
@@ -58,7 +59,7 @@
 		"build:prepare": "rm -rf ./built ./.tmp; mkdir ./built",
 		"build:static": "cp -r -n ./public/. ./.tmp; exit 0",
 		"build:webpack": "./node_modules/.bin/webpack --config .webpack.ts --progress -d",
-		"build:finalize": "cp -r ./.tmp/. ./built; rm -rf ./.tmp",
+		"build:finalize": "cp -r ./.tmp/. ./built; rm -rf ./.tmp; rm -rf ./built/browser.js",
 		"compile": "npm run build:prepare && npm run compile:webpack && npm run build:static && npm run build:finalize",
 		"compile:webpack": "./node_modules/.bin/webpack --config .webpack.ts --progress -p"
 	}

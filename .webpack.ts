@@ -1,7 +1,12 @@
+// http://www.flaticon.com/
+//
 /// <reference path="./node_modules/@types/node/index.d.ts" />
 
 import * as path from 'path';
 import * as webpack from 'webpack';
+
+const ReactStaticPlugin = require('react-static-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 export default {
 
@@ -20,12 +25,6 @@ export default {
 	 */
 	entry: {
 		browser: path.resolve('./bootstrap/browser'),
-		vendor: [
-			'normalize.css',
-			'react',
-			'react-dom',
-			'react-router',
-		],
 	},
 
 	/**
@@ -58,6 +57,7 @@ export default {
 			'.scss',
 			'.css',
 			'.json',
+			'.svg',
 		],
 	},
 
@@ -78,16 +78,18 @@ export default {
 			},
 			{
 				test: /\.(css|scss)$/,
-				loaders: [
-					'style',
-					'css?modules,camelCase,sourceMap,localIdentName=[local]',
-					'sass?sourceMap',
-				],
+				loader: ExtractTextPlugin.extract({
+					fallbackLoader: 'style',
+					loader: [
+						'css?modules,camelCase,sourceMap,localIdentName=[local]',
+						'sass?sourceMap',
+					],
+				}),
 				include: [
 					path.resolve('./styles'),
 					path.resolve('./node_modules/normalize.css'),
 				],
-			}
+			},
 		],
 	},
 
@@ -98,13 +100,14 @@ export default {
 	 */
 	plugins: [
 
-		/**
-		 * Make sure webpack shares the vendor chunk as shared,
-		 * and dos not re-include it into the app chunk.
-		 */
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
-			minChunks: Infinity,
+		new ExtractTextPlugin({
+			filename: 'styles.css',
+            allChunks: true,
+        }),
+
+		new ReactStaticPlugin({
+			routes: 'app/layouts/app',
+			template: 'app/html',
 		}),
 
 	],
@@ -114,7 +117,7 @@ export default {
 	 *
 	 * @type {string}
 	 */
-	devtool: 'source-map',
+	// devtool: 'source-map',
 
 	/**
 	 * Can be used to configure the behaviour of webpack-dev-server when
