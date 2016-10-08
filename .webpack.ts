@@ -7,6 +7,7 @@ import * as webpack from 'webpack';
 
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SWPrecachePlugin = require('sw-precache-webpack-plugin');
 
 export default {
 
@@ -114,6 +115,16 @@ export default {
 		new ReactStaticPlugin({
 			routes: 'app/layouts/app',
 			template: 'app/html',
+		}),
+
+		new SWPrecachePlugin({
+			cacheId: 'bycedric',
+			filename: 'service-worker.js',
+			staticFileGlobs: [
+				'*.{html,json,css}',
+				'fonts/**/*',
+				'images/**/*',
+			],
 		}),
 
 	],

@@ -41,7 +41,6 @@ export default class Html extends Component<Props, State>
 				</head>
 				<body>
 					<div id='app' dangerouslySetInnerHTML={{ __html: this.props.body }} />
-					<script dangerouslySetInnerHTML={{ __html: `if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js', { scope: '/' }); }` }} />
 				</body>
 			</html>
 		);
