@@ -22,6 +22,9 @@ export default class Html extends Component<Props, State>
 					<title>Cedric van Putten - byCedric</title>
 					<meta name='viewport' content='width=device-width, initial-scale=1' />
 
+					<meta name='keywords' content='bycedric, developer, cedric van putten' />
+					<meta name='description' content={`My name is Cedric van Putten and I'm an allround developer.`} />
+
 					<meta name='mobile-web-app-capable' content='yes' />
 					<meta name='apple-mobile-web-app-capable' content='yes' />
 					<meta name='apple-mobile-web-app-status-bar-style' content='#333333' />
@@ -41,6 +44,7 @@ export default class Html extends Component<Props, State>
 				</head>
 				<body>
 					<div id='app' dangerouslySetInnerHTML={{ __html: this.props.body }} />
+					<script src='/sw-register.js'></script>
 				</body>
 			</html>
 		);

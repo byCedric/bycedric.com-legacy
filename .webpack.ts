@@ -1,5 +1,3 @@
-// http://www.flaticon.com/
-//
 /// <reference path="./node_modules/@types/node/index.d.ts" />
 
 import * as path from 'path';
@@ -7,7 +5,6 @@ import * as webpack from 'webpack';
 
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const SWPrecachePlugin = require('sw-precache-webpack-plugin');
 
 export default {
 
@@ -25,7 +22,10 @@ export default {
 	 * @type {object}
 	 */
 	entry: {
-		browser: path.resolve('./bootstrap/browser'),
+		app: path.resolve('./app/layouts/app'),
+		manifest: path.resolve('./app/others/manifest'),
+		sw: path.resolve('./app/others/sw'),
+		'sw-register': path.resolve('./app/others/sw-register'),
 	},
 
 	/**
@@ -91,6 +91,13 @@ export default {
 					path.resolve('./node_modules/normalize.css'),
 				],
 			},
+			{
+				test: /\.(json)$/,
+				loader: 'json',
+				include: [
+					path.resolve('./app'),
+				],
+			}
 		],
 	},
 
@@ -115,16 +122,6 @@ export default {
 		new ReactStaticPlugin({
 			routes: 'app/layouts/app',
 			template: 'app/html',
-		}),
-
-		new SWPrecachePlugin({
-			cacheId: 'bycedric',
-			filename: 'service-worker.js',
-			staticFileGlobs: [
-				'*.{html,json,css}',
-				'fonts/**/*',
-				'images/**/*',
-			],
 		}),
 
 	],

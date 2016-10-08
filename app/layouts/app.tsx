@@ -18,6 +18,11 @@ export default class AppLayout extends Component<Props, State>
 	render(): ReactElement<any> {
 		return (
 			<div className={styles.lApp}>
+				<h1 className={styles.lAppTitle}>byCedric</h1>
+				<p className={styles.lAppDescription}>
+					My name is Cedric van Putten and I'm an allround developer.
+				</p>
+
 				<div className={styles.lAppButton}>
 					<ButtonObject type='github' url='https://github.com/bycedric' />
 				</div>

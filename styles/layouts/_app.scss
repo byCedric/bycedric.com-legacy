@@ -46,4 +46,9 @@
 		font-size: 1.5em;
 		text-align: center;
 	}
+
+	&__title,
+	&__description {
+		display: none;
+	}
 }
