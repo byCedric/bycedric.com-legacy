@@ -15,7 +15,7 @@
 	"homepage": "https://bycedric.com",
 	"dependencies": {
 		"bower": "1.8.0",
-		"polymer-cli": "0.17.0"
+		"polymer-cli": "next"
 	},
 	"scripts": {
 		"bower": "./node_modules/.bin/bower",
@@ -25,6 +25,7 @@
 		"lint": "npm run polymer -- lint --no-follow-dependencies",
 		"start": "npm run polymer -- serve",
 		"test": "npm run lint && npm run polymer -- test",
-		"build": "npm run clean && npm run polymer -- build --html.collapseWhitespace"
+		"build": "npm run clean && npm run polymer -- build --html.collapseWhitespace --insert-dependency-links",
+		"serve": "npm run polymer -- serve build/bundled"
 	}
 }

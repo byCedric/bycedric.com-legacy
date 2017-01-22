@@ -1,9 +1,14 @@
 {
 	"entrypoint": "index.html",
-	"sources": [
-		"./src/**/*"
+	"shell": "./src/bc-app.html",
+	"fragments": [
+		"./src/bc-button.html"
 	],
-	"includeDependencies": [
+	"sources": [
+		"./src/**/*",
+		"./images/**/*"
+	],
+	"extraDependencies": [
 		"./manifest.json",
 		"./bower_components/webcomponentsjs/webcomponents-lite.min.js"
 	]
