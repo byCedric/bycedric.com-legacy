@@ -1,5 +1,0 @@
---compilers js:ts-node/register
---require ./bootstrap/tests.ts
---reporter progress
---recursive
---colors

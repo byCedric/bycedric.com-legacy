@@ -1,7 +1,6 @@
-# NPM
-node_modules
-npm-debug.log
+/build
 
-# Project
-#/built
-/.tmp
+# NPM & Bower
+/bower_components
+/node_modules
+npm-debug.log
