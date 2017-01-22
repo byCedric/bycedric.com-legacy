@@ -3,6 +3,7 @@
 	"short_name": "byCedric",
 	"description": "My name is Cedric van Putten and I'm an allround developer.",
 	"start_url": "/",
+	"background_color": "#ffffff",
 	"theme_color": "#333333",
 	"display": "standalone",
 	"orientation": "any",
