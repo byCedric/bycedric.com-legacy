@@ -26,6 +26,7 @@
 		"start": "npm run polymer -- serve",
 		"test": "npm run lint && npm run polymer -- test",
 		"build": "npm run clean && npm run polymer -- build --html.collapseWhitespace --insert-dependency-links",
-		"serve": "npm run polymer -- serve build/bundled"
+		"serve": "npm run polymer -- serve build/bundled",
+		"compile": "npm install && npm run build"
 	}
 }
