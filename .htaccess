@@ -1,0 +1,23 @@
+#
+# Enable rewrite
+# Make sure we can move the user to other domains or protocols.
+#
+
+RewriteEngine on
+
+#
+# Default domain
+# Make sure we always redirect to the correct domain.
+#
+
+RewriteCond %{HTTP_HOST} !^bycedric\.com [NC]
+RewriteCond %{HTTP_HOST} !^$
+RewriteRule ^/?(.*)      https://bycedric.com/$1 [L,R,NE]
+
+#
+# SSL
+# Enforce the use of ssl
+#
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [L,QSA,R=permanent]
