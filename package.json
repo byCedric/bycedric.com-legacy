@@ -13,8 +13,7 @@
 	"license": "MIT",
 	"author": "Cedric van Putten <me@bycedric.com> (https://bycedric.com)",
 	"homepage": "https://bycedric.com",
-	"dependencies": { },
-	"devDependencies": {
+	"dependencies": {
 		"bower": "1.8.0",
 		"polymer-cli": "0.17.0"
 	},
