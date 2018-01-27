@@ -1,0 +1,7 @@
+extends: airbnb
+rules:
+  indent: [error, tab]
+  jsx-a11y/href-no-hash: off
+  no-tabs: off
+  react/jsx-filename-extension: off
+  react/jsx-indent: [error, tab]
