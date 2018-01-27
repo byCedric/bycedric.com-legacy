@@ -6,7 +6,8 @@
 		"start": "react-app-rewired start",
 		"build": "react-app-rewired build",
 		"test": "react-app-rewired test --env=jsdom",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"serve": "serve --single ./build"
 	},
 	"dependencies": {
 		"react": "^16.2.0",
@@ -17,6 +18,7 @@
 		"eslint-config-airbnb": "^16.1.0",
 		"eslint-plugin-jsx-a11y": "^6.0.3",
 		"react-app-rewire-eslint": "^0.2.3",
-		"react-app-rewired": "^1.4.0"
+		"react-app-rewired": "^1.4.0",
+		"serve": "^6.4.9"
 	}
 }
