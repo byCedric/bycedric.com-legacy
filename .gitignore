@@ -1,6 +1,0 @@
-/build
-
-# NPM & Bower
-/bower_components
-/node_modules
-npm-debug.log
